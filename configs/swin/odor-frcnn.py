@@ -1,6 +1,6 @@
 _base_ = [
-    '../_base_/models/mask_rcnn_r50_fpn.py',
-    '../_base_/datasets/coco_instance.py',
+    '../_base_/models/mask_rcnn_r50_fpn_unmasked.py',
+    '../_base_/datasets/odor_instance.py',
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 
@@ -26,8 +26,23 @@ model = dict(
         with_cp=False,
         convert_weights=True,
         init_cfg=dict(type='Pretrained', checkpoint=pretrained)),
-    neck=dict(in_channels=[96, 192, 384, 768]))
-
+    neck=dict(in_channels=[96, 192, 384, 768]),
+    roi_head=dict(
+        bbox_head=dict(
+            type='Shared2FCBBoxHead',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=87,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0., 0., 0., 0.],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    ))
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
@@ -90,4 +105,6 @@ optimizer = dict(
             'norm': dict(decay_mult=0.)
         }))
 lr_config = dict(warmup_iters=1000, step=[27, 33])
-runner = dict(max_epochs=36)
+runner = dict(max_epochs=150)
+
+

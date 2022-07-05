@@ -630,6 +630,8 @@ class CocoDataset(CustomDataset):
         """
 
         metrics = metric if isinstance(metric, list) else [metric]
+        #DIRTY HACK BY MATHIAS
+        metrics = ['bbox']
         allowed_metrics = ['bbox', 'segm', 'proposal', 'proposal_fast']
         for metric in metrics:
             if metric not in allowed_metrics:
