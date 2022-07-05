@@ -1,3 +1,10 @@
+# How to apply MMDetection on the ODOR dataset using a Faster RCNN with SWIN backbone:
+- clone this repository
+- download the ODOR dataset at: https://zenodo.org/record/6367776
+- reorganize the dataset to the COCO format as described in the MMDetection [docs](https://mmdetection.readthedocs.io/en/latest/tutorials/customize_dataset.html#reorganize-new-data-formats-to-existing-format).
+- start the finetuning using `python tools/train.py configs/swin/odor-frcnn`
+- adaptations to the training process can be achieved by modifying the config file `configs/swin/odor-frcnn` and the ones that it inherits from (`_base_=...)`
+
 <div align="center">
   <img src="resources/mmdet-logo.png" width="600"/>
   <div>&nbsp;</div>
