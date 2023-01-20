@@ -199,6 +199,7 @@ def main():
     logger.info(f'Config:\n{cfg.pretty_text}')
 
     cfg.device = get_device()
+    
     # set random seeds
     seed = init_random_seed(args.seed, device=cfg.device)
     seed = seed + dist.get_rank() if args.diff_seed else seed
