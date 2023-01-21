@@ -9,7 +9,7 @@
 #SBATCH -e /home/%u/logs/mmdetection-%x-%j-on-%N.err
 #SBATCH --mail-type=ALL
 #Timelimit format: "hours:minutes:seconds" -- max is 24h
-#SBATCH --time=00:30:00
+#SBATCH --time=23:59:59
 
 TMPDIR=/scratch/zinnen/$SLURM_JOB_ID
 
