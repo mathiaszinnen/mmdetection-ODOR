@@ -4,7 +4,8 @@ _base_ = [
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 
-pretrained='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth',
+#pretrained='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth',
+pretrained='/net/cluster/zinnen/models/swin_large_patch4_window12_384_22k.pth'
 
 model = dict(
     type='FasterRCNN',
@@ -14,7 +15,7 @@ model = dict(
         embed_dims=192,
         depths=[2, 2, 18, 2],
         num_heads=[6, 12, 24, 48],
-        window_size=7,
+        window_size=12,
         mlp_ratio=4,
         qkv_bias=True,
         qk_scale=None,
