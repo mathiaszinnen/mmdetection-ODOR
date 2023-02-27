@@ -1,10 +1,10 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=FRCNN-RN50
+#SBATCH --job-name=FRCNN-swinl
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=12000
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH -o /home/%u/logs/mmdetection-%x-%j-on-%N.out
 #SBATCH -e /home/%u/logs/mmdetection-%x-%j-on-%N.err
 #SBATCH --mail-type=ALL
@@ -29,7 +29,8 @@ time tar xf /net/cluster/shared_dataset/ODOR/odor3.tar -C ./data/ODOR-v3
 source /net/cluster/zinnen/miniconda/etc/profile.d/conda.sh
 conda activate openmmlab
 
-python tools/train.py $1 --work-dir /net/cluster/zinnen/mmdetection-workdirs/$SLURM_JOB_ID --cfg-options epochs=1
+#python tools/train.py $1 --work-dir /net/cluster/zinnen/mmdetection-workdirs/$SLURM_JOB_ID --cfg-options epochs=1
+./tools/dist_train.sh $1 2 --work-dir /net/cluster/zinnen/mmdetection-workdirs/$SLURM_JOB_ID --cfg-options epochs=1
 
 echo "done"
 
