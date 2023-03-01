@@ -9,7 +9,7 @@ runner = dict(type='EpochBasedRunner', max_epochs=1)
 model = dict(
     backbone=dict(
         frozen_stages=4,
-        init_cfg=(type='Pretrained',
+        init_cfg=dict(type='Pretrained',
             checkpoint='/net/cluster/zinnen/models/cross-eval/deart_on_odor/epoch_10.pth')
     )
 )
