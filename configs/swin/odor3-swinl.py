@@ -4,8 +4,7 @@ _base_ = [
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 
-#pretrained='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth',
-pretrained='/net/cluster/zinnen/models/swin_large_patch4_window12_384_22k.pth'
+pretrained='/home/woody/iwi5/iwi5064h/swin_large_patch4_window12_384_22k.pth'
 
 model = dict(
     type='FasterRCNN',
@@ -27,7 +26,7 @@ model = dict(
         with_cp=False,
         convert_weights=True,
         init_cfg=dict(type='Pretrained', checkpoint=pretrained)),
-    neck=dict(in_channels=[96, 192, 384, 768]),
+    neck=dict(in_channels=[192, 384, 768, 1536]),
     roi_head=dict(
         bbox_head=dict(
             type='Shared2FCBBoxHead',
@@ -91,7 +90,11 @@ train_pipeline = [
     #dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels', 'gt_masks']),
     dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels']),
 ]
-data = dict(train=dict(pipeline=train_pipeline))
+data = dict(
+        train=dict(
+            pipeline=train_pipeline),
+        samples_per_gpu=2,
+        workers_per_gpu=1)
 
 optimizer = dict(
     _delete_=True,

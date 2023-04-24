@@ -1,0 +1,202 @@
+### Starting TaskPrologue of job 685414 on a0121 at Sun Feb 19 18:33:09 CET 2023
+Running on cores 64-79 with governor ondemand
+Sun Feb 19 18:33:09 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.60.13    Driver Version: 525.60.13    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A40          On   | 00000000:81:00.0 Off |                  Off |
+|  0%   30C    P8    12W / 300W |      0MiB / 49140MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pytorch
+  Downloading pytorch-1.0.2.tar.gz (689 bytes)
+Requirement already satisfied: torchvision in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (0.14.1+cu116)
+Requirement already satisfied: typing-extensions in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from torchvision) (4.4.0)
+Requirement already satisfied: numpy in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from torchvision) (1.22.4)
+Requirement already satisfied: requests in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from torchvision) (2.25.1)
+Requirement already satisfied: torch==1.13.1 in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from torchvision) (1.13.1+cu116)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from torchvision) (8.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->torchvision) (2021.10.8)
+Requirement already satisfied: idna<3,>=2.5 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->torchvision) (2.10)
+Requirement already satisfied: chardet<5,>=3.0.2 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->torchvision) (4.0.0)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from requests->torchvision) (1.26.14)
+Building wheels for collected packages: pytorch
+  Building wheel for pytorch (setup.py): started
+  Building wheel for pytorch (setup.py): finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /apps/python/3.9-anaconda/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"'; __file__='"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/685414.alex/pip-wheel-ol12b6uk
+       cwd: /tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/
+  Complete output (5 lines):
+  Traceback (most recent call last):
+    File "<string>", line 1, in <module>
+    File "/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py", line 15, in <module>
+      raise Exception(message)
+  Exception: You tried to install "pytorch". The package named for PyTorch is "torch"
+  ----------------------------------------
+  ERROR: Failed building wheel for pytorch
+  Running setup.py clean for pytorch
+Failed to build pytorch
+Installing collected packages: pytorch
+    Running setup.py install for pytorch: started
+    Running setup.py install for pytorch: finished with status 'error'
+    ERROR: Command errored out with exit status 1:
+     command: /apps/python/3.9-anaconda/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"'; __file__='"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/685414.alex/pip-record-3kilj7_n/install-record.txt --single-version-externally-managed --user --prefix= --compile --install-headers /home/hpc/iwi5/iwi5064h/.local/include/python3.9/pytorch
+         cwd: /tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/
+    Complete output (5 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py", line 11, in <module>
+        raise Exception(message)
+    Exception: You tried to install "pytorch". The package named for PyTorch is "torch"
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: /apps/python/3.9-anaconda/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"'; __file__='"'"'/tmp/685414.alex/pip-install-q9d9lyjr/pytorch_527e91c10f1b45b4a8f55ff1bc54107a/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/685414.alex/pip-record-3kilj7_n/install-record.txt --single-version-externally-managed --user --prefix= --compile --install-headers /home/hpc/iwi5/iwi5064h/.local/include/python3.9/pytorch Check the logs for full command output.
+Defaulting to user installation because normal site-packages is not writeable
+Collecting openmim
+  Using cached openmim-0.3.6-py2.py3-none-any.whl (51 kB)
+Collecting pandas
+  Downloading pandas-1.5.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+Requirement already satisfied: tabulate in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from openmim) (0.9.0)
+Collecting model-index
+  Using cached model_index-0.1.11-py3-none-any.whl (34 kB)
+Requirement already satisfied: Click in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from openmim) (8.1.3)
+Requirement already satisfied: requests in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from openmim) (2.25.1)
+Requirement already satisfied: pip>=19.3 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from openmim) (21.1.3)
+Collecting colorama
+  Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting rich
+  Using cached rich-13.3.1-py3-none-any.whl (239 kB)
+Requirement already satisfied: markdown in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from model-index->openmim) (3.4.1)
+Collecting ordered-set
+  Using cached ordered_set-4.1.0-py3-none-any.whl (7.6 kB)
+Requirement already satisfied: pyyaml in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from model-index->openmim) (6.0)
+Requirement already satisfied: importlib-metadata>=4.4 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from markdown->model-index->openmim) (4.8.1)
+Requirement already satisfied: zipp>=0.5 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from importlib-metadata>=4.4->markdown->model-index->openmim) (3.6.0)
+Requirement already satisfied: pytz>=2020.1 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from pandas->openmim) (2021.3)
+Requirement already satisfied: python-dateutil>=2.8.1 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from pandas->openmim) (2.8.2)
+Requirement already satisfied: numpy>=1.20.3 in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from pandas->openmim) (1.22.4)
+Requirement already satisfied: six>=1.5 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from python-dateutil>=2.8.1->pandas->openmim) (1.16.0)
+Requirement already satisfied: idna<3,>=2.5 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->openmim) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from requests->openmim) (1.26.14)
+Requirement already satisfied: chardet<5,>=3.0.2 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->openmim) (4.0.0)
+Requirement already satisfied: certifi>=2017.4.17 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from requests->openmim) (2021.10.8)
+Collecting markdown-it-py<3.0.0,>=2.1.0
+  Using cached markdown_it_py-2.1.0-py3-none-any.whl (84 kB)
+Collecting pygments<3.0.0,>=2.14.0
+  Using cached Pygments-2.14.0-py3-none-any.whl (1.1 MB)
+Collecting mdurl~=0.1
+  Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: mdurl, pygments, ordered-set, markdown-it-py, rich, pandas, model-index, colorama, openmim
+  WARNING: The script pygmentize is installed in '/home/hpc/iwi5/iwi5064h/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/hpc/iwi5/iwi5064h/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script mi is installed in '/home/hpc/iwi5/iwi5064h/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script mim is installed in '/home/hpc/iwi5/iwi5064h/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed colorama-0.4.6 markdown-it-py-2.1.0 mdurl-0.1.2 model-index-0.1.11 openmim-0.3.6 ordered-set-4.1.0 pandas-1.5.3 pygments-2.14.0 rich-13.3.1
+/var/tmp/slurmd_spool/job685414/slurm_script: line 18: mim: command not found
+Defaulting to user installation because normal site-packages is not writeable
+Collecting mmdet
+  Using cached mmdet-2.28.1-py3-none-any.whl (1.5 MB)
+Requirement already satisfied: matplotlib in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from mmdet) (3.4.3)
+Collecting terminaltables
+  Using cached terminaltables-3.1.10-py2.py3-none-any.whl (15 kB)
+Requirement already satisfied: pycocotools in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from mmdet) (2.0.6)
+Requirement already satisfied: six in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from mmdet) (1.16.0)
+Requirement already satisfied: scipy in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from mmdet) (1.7.3)
+Requirement already satisfied: numpy in /home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages (from mmdet) (1.22.4)
+Requirement already satisfied: pyparsing>=2.2.1 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from matplotlib->mmdet) (3.0.4)
+Requirement already satisfied: python-dateutil>=2.7 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from matplotlib->mmdet) (2.8.2)
+Requirement already satisfied: kiwisolver>=1.0.1 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from matplotlib->mmdet) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from matplotlib->mmdet) (0.10.0)
+Requirement already satisfied: pillow>=6.2.0 in /apps/python/3.9-anaconda/lib/python3.9/site-packages (from matplotlib->mmdet) (8.4.0)
+Installing collected packages: terminaltables, mmdet
+Successfully installed mmdet-2.28.1 terminaltables-3.1.10
+/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launch.py:180: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+Traceback (most recent call last):
+  File "/tmp/685414.alex/685414/mmdetection-ODOR/./tools/train.py", line 9, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 409796) of binary: /apps/python/3.9-anaconda/bin/python
+Traceback (most recent call last):
+  File "/apps/python/3.9-anaconda/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/apps/python/3.9-anaconda/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launch.py", line 195, in <module>
+    main()
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launch.py", line 191, in main
+    launch(args)
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launch.py", line 176, in launch
+    run(args)
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/run.py", line 753, in run
+    elastic_launch(
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/hpc/iwi5/iwi5064h/.local/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 246, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+./tools/train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-02-19_18:34:55
+  host      : a0121.nhr.fau.de
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 409796)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+train done
+=== JOB_STATISTICS ===
+=== current date     : Sun Feb 19 18:34:56 CET 2023
+= Job-ID             : 685414 on alex
+= Job-Name           : frcnn-swinl
+= Job-Command        : /home/woody/iwi5/iwi5064h/mmdetection-ODOR/cluster/alex/train_alex.sh
+= Initial workdir    : /home/woody/iwi5/iwi5064h/mmdetection-ODOR/cluster
+= Queue/Partition    : a40
+= Slurm account      : iwi5 with QOS=normal
+= Requested resources: cpu=16,mem=60000M,node=1,billing=16,gres/gpu=1,gres/gpu:a40=1 for 01:10:00
+= Elapsed runtime    : 00:01:51
+= Total RAM usage    : 0.1 GiB of assigned 58 GiB (0.2%)   
+= Node list          : a0121
+= Subm/Elig/Start/End: 2023-02-19T18:33:04 / 2023-02-19T18:33:04 / 2023-02-19T18:33:04 / 2023-02-19T18:34:55
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody        104.6G   500.0G   750.0G        N/A     250K                          N/A    
+    /home/hpc           20.4G    52.4G   104.9G        N/A  35,753      500K   1,000K        N/A    
+    /home/vault         91.9G   524.3G  1048.6G        N/A  31,769      200K     400K        N/A    
+    janus.rrze.uni-erlangen.de:/zfspool/viphome/iwi5-datasets  1616.7M     0.0K     0.0K        N/A   4,723                           N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1    1,025    1,025         N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
